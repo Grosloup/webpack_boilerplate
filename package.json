@@ -36,5 +36,13 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack-merge": "^0.8.4"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "fontawesome": "^4.5.0",
+    "jquery": "^2.2.3",
+    "lodash": "^4.8.2",
+    "moment": "^2.12.0",
+    "moment-range": "^2.2.0"
   }
 }
