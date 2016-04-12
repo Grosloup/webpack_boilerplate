@@ -19,6 +19,23 @@ var serverOptions = {
     },
     stats: {colors: true}
 }
+
+if(defaults.hasOwnProperty('proxy')){
+    serverOptions.proxy = {
+        "*": {
+            target: defaults.proxy.target,
+            changeOrigin: true,
+            bypass: function (req, res, proxyOptions) {
+                // On laisse passé les requêtes hot-reload
+                if (req.url.includes('__webpack_hmr')) {
+                    return req.url
+                }
+            }
+        }
+    }
+}
+
+
 chokidar.watch(['./**/*.html'])
     .on('change', function(){
         hotMiddleware.publish({action: 'reload'})

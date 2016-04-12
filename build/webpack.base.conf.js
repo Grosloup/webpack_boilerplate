@@ -6,14 +6,14 @@ var root = path.resolve(__dirname, '../')
 module.exports = {
     entry: {
         app: [
-            './src/scss/' + defaults.entries.scss,
-            './src/js/' + defaults.entries.js
+            defaults.entries.scss,
+            defaults.entries.js
         ]
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, defaults.output.path),
         filename: '[name].js',
-        publicPath: '/dist/'
+        publicPath: defaults.output.publicPath
     },
     module: {
         preLoaders: [
